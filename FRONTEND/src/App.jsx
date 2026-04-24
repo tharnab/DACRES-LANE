@@ -17,6 +17,7 @@ import Profile from './pages/Profile';
 import Orders from './pages/Orders';
 import AdminDashboard from './pages/AdminDashboard';
 import TrackOrder from './pages/TrackOrder';
+import UnderConstruction from './pages/UnderConstruction';
 
 function AnimatedRoutes() {
     const location = useLocation();
@@ -33,6 +34,7 @@ function AnimatedRoutes() {
                 <Route path="/orders" element={<AnimatedPage><Orders /></AnimatedPage>} />
                 <Route path="/admin/dashboard" element={<AnimatedPage><AdminDashboard /></AnimatedPage>} />
                 <Route path="/track-order/:id?" element={<AnimatedPage><TrackOrder /></AnimatedPage>} />
+                <Route path="*" element={<AnimatedPage><UnderConstruction /></AnimatedPage>} />
             </Routes>
         </AnimatePresence>
     );
