@@ -1,0 +1,230 @@
+/* Navbar Container */
+.navbar {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: transform 0.3s;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+/* Desktop Buttons Container */
+.desktop-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Buttons */
+.login-btn, .register-btn, .logout-btn {
+  padding: 8px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.login-btn {
+  color: white;
+  border: 1px solid white;
+  background: transparent;
+}
+
+.login-btn:hover {
+  background: white;
+  color: #FF6B35;
+  transform: translateY(-2px);
+}
+
+.register-btn {
+  background: white;
+  color: #FF6B35;
+  border: none;
+}
+
+.register-btn:hover {
+  background: #FFE0B5;
+  transform: translateY(-2px);
+  color: #FF6B35;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: white;
+  color: #FF6B35;
+}
+
+/* User Name Display */
+.user-name-desktop {
+  color: white;
+  font-weight: 500;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+.hamburger.open {
+  background: transparent;
+}
+
+.hamburger.open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.hamburger.open::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* Mobile Navigation Links */
+.nav-links {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 0;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.user-name {
+  color: white;
+  font-weight: 500;
+  padding: 5px 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.logout-btn-mobile {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.btn-primary-mobile {
+  background: white;
+  color: #FF6B35;
+  padding: 8px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+  .nav-links {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .desktop-buttons {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .navbar-container {
+    flex-direction: row;
+  }
+  
+  .navbar-logo {
+    font-size: 1.2rem;
+  }
+}

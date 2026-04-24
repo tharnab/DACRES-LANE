@@ -18,7 +18,7 @@ const foodSchema = new mongoose.Schema({
     category: {
         type: String,
         required: true,
-        enum: ['Lunch', 'Dinner', 'Breakfast']
+        enum: ['Lunch', 'Dinner', 'Breakfast', 'Evening Snacks']
     },
     imageUrl: {
         type: String,
@@ -33,6 +33,10 @@ const foodSchema = new mongoose.Schema({
         min: 0,
         max: 5,
         default: 0
+    },
+    isVeg: {
+        type: Boolean,
+        default: false
     },
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,

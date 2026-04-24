@@ -1,0 +1,421 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  animation: fadeInUp 1s ease;
+  padding: 0 20px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.restaurant-name {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.restaurant-year {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  color: #FFE0B5;
+}
+
+.reserve-btn {
+  background: #FF6B35;
+  border: none;
+  padding: 12px 35px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.reserve-btn:hover {
+  background: #FF8C42;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255,107,53,0.4);
+}
+
+/* Services Section */
+.services-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.service-card {
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.service-card h3:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: #FF6B35;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #666;
+  margin-top: 20px;
+}
+
+/* Popular Dishes Section */
+.popular-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #333;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #FF6B35;
+}
+
+.menu-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+  height: 100%;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.menu-card-img {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.menu-card:hover .menu-card-img {
+  transform: scale(1.05);
+}
+
+.menu-card-body {
+  padding: 20px;
+}
+
+.menu-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.menu-card-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FF6B35;
+  margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+  background: #FF6B35;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background: #FF8C42;
+  transform: translateY(-2px);
+}
+
+/* View All Button */
+.view-all-btn {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.view-all-btn .btn {
+  background: transparent;
+  border: 2px solid #FF6B35;
+  color: #FF6B35;
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.view-all-btn .btn:hover {
+  background: #FF6B35;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+  position: relative;
+  display: inline-block;
+}
+
+.about-title:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #FF6B35;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-top: 20px;
+}
+
+.about-image {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+  transition: transform 0.5s;
+  width: 100%;
+  height: auto;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Info Section (Hours & Contact) */
+.info-section {
+  padding: 80px 0;
+  background: #2C3E50;
+  color: white;
+}
+
+.info-card {
+  text-align: center;
+  padding: 30px;
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.info-card h3:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: #FF6B35;
+}
+
+.info-card p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .restaurant-name {
+    font-size: 3.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .about-title {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant-name {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .services-section,
+  .popular-section,
+  .about-section,
+  .info-section {
+    padding: 50px 0;
+  }
+  
+  .service-card {
+    margin-bottom: 20px;
+    padding: 30px 20px;
+  }
+  
+  .menu-card {
+    margin-bottom: 20px;
+  }
+  
+  .menu-card-img {
+    height: 200px;
+  }
+  
+  .about-title {
+    font-size: 1.5rem;
+  }
+  
+  .info-card {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .restaurant-name {
+    font-size: 1.8rem;
+  }
+  
+  .restaurant-year {
+    font-size: 0.9rem;
+  }
+  
+  .reserve-btn {
+    padding: 8px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .menu-card-title {
+    font-size: 1.1rem;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+  }
+}
