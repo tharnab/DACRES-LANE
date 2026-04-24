@@ -1,421 +1,588 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Hero Section - Parallax Effect */
+.home-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+/* Fixed Background Image - Parallax Effect */
+.hero-bg {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 120%;
+    height: 140%;
+    background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
 }
 
-/* Hero Section */
-.hero-section {
-  height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-}
-
+/* Overlay that reveals on scroll */
 .hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.4) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* White overlay that comes from bottom on scroll */
+.hero-white-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: height 0.3s ease-out;
+    pointer-events: none;
+}
+
+.hero-white-overlay.visible {
+    height: 100%;
 }
 
 .hero-content {
-  text-align: center;
-  animation: fadeInUp 1s ease;
-  padding: 0 20px;
+    text-align: center;
+    padding: 0 20px;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: white;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-title-line {
+    display: block;
+}
+
+.hero-year {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.85);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+/* Order Button - White Style */
+.order-btn {
+    background: transparent;
+    border: 2px solid white;
+    padding: 14px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+.order-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.order-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.order-btn:hover {
+    background: white;
+    color: #FF6B35;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+}
+
+.order-btn .btn-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-left: 8px;
+}
+
+.order-btn:hover .btn-arrow {
+    transform: translateX(8px);
 }
 
 @keyframes fadeInUp {
-  from {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+.scroll-mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 15px;
+    position: relative;
+}
+
+.scroll-mouse::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: white;
+    border-radius: 2px;
+    animation: scrollWheel 1.5s infinite;
+}
+
+@keyframes scrollWheel {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(15px);
+    }
+}
+
+/* Services Section - Scroll Reveal */
+.services-section {
+    padding: 100px 0;
+    background: #FFF8F5;
+    position: relative;
     opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.services-section.revealed {
     opacity: 1;
     transform: translateY(0);
-  }
 }
 
-.restaurant-name {
-  font-size: 5rem;
-  font-weight: 800;
-  letter-spacing: 4px;
-  margin-bottom: 1rem;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+/* Popular Dishes Section - Scroll Reveal */
+.popular-section {
+    padding: 100px 0;
+    background: white;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out 0.2s;
 }
 
-.restaurant-year {
-  font-size: 1.2rem;
-  letter-spacing: 2px;
-  margin-bottom: 2rem;
-  color: #FFE0B5;
+.popular-section.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.reserve-btn {
-  background: #FF6B35;
-  border: none;
-  padding: 12px 35px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border-radius: 50px;
-  transition: all 0.3s;
+/* About Section - Scroll Reveal */
+.about-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #FFF8F5 0%, #FFFFFF 100%);
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out 0.4s;
 }
 
-.reserve-btn:hover {
-  background: #FF8C42;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255,107,53,0.4);
+.about-section.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Services Section */
-.services-section {
-  padding: 80px 0;
-  background: #f8f9fa;
+/* Contact Section - Scroll Reveal */
+.contact-section {
+    padding: 80px 0;
+    background: #2C3E50;
+    color: white;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out 0.6s;
 }
 
+.contact-section.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Service Card Hover Effects */
 .service-card {
-  text-align: center;
-  padding: 40px 20px;
-  background: white;
-  border-radius: 15px;
-  transition: all 0.3s;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-.service-icon {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+/* Popular Card */
+.popular-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    height: 100%;
 }
 
-.service-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #333;
-  position: relative;
-  display: inline-block;
+.popular-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-.service-card h3:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 2px;
-  background: #FF6B35;
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-year {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    
+    .order-btn {
+        padding: 10px 30px;
+        font-size: 0.9rem;
+    }
+    
+    .services-section,
+    .popular-section,
+    .about-section,
+    .contact-section {
+        padding: 60px 0;
+    }
 }
 
-.service-card p {
-  font-size: 0.9rem;
-  line-height: 1.8;
-  color: #666;
-  margin-top: 20px;
-}
-
-/* Popular Dishes Section */
+/* Popular Dishes Section - Fixed Cards */
 .popular-section {
-  padding: 80px 0;
-  background: white;
+    padding: 80px 0;
+    background: white;
+    position: relative;
 }
 
 .section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 50px;
-  color: #333;
-  position: relative;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+    position: relative;
 }
 
-.section-title:after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: #FF6B35;
+.section-title-line {
+    width: 60px;
+    height: 3px;
+    background: #FF6B35;
+    margin: 0 auto 40px;
+    border-radius: 2px;
 }
 
-.menu-card {
-  border: none;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: all 0.3s;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  margin-bottom: 30px;
-  height: 100%;
+/* Popular Card - Fixed Layout */
+.popular-card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
 }
 
-.menu-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+.popular-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-.menu-card-img {
-  height: 250px;
-  object-fit: cover;
-  transition: transform 0.5s;
+/* Card Image Wrapper */
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
 }
 
-.menu-card:hover .menu-card-img {
-  transform: scale(1.05);
+.popular-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.menu-card-body {
-  padding: 20px;
+.popular-card:hover .popular-card-img {
+    transform: scale(1.05);
 }
 
-.menu-card-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: #333;
+/* Card Overlay */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.menu-card-text {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 15px;
-  line-height: 1.5;
+.card-img-wrapper:hover .card-overlay {
+    opacity: 1;
 }
 
-.price {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #FF6B35;
-  margin-bottom: 15px;
+.quick-add-btn {
+    background: white;
+    color: #FF6B35;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.add-to-cart-btn {
-  background: #FF6B35;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  width: 100%;
-  transition: all 0.3s;
+.card-img-wrapper:hover .quick-add-btn {
+    transform: translateY(0);
 }
 
-.add-to-cart-btn:hover {
-  background: #FF8C42;
-  transform: translateY(-2px);
+.quick-add-btn:hover {
+    background: #FF6B35;
+    color: white;
+}
+
+/* Bestseller Badge */
+.bestseller-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #FFD700;
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Body */
+.popular-card .card-body {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Food Type Badge */
+.food-type {
+    margin-bottom: 10px;
+}
+
+.type-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.type-badge.veg {
+    background: #e8f5e9;
+    color: #4CAF50;
+}
+
+.type-badge.non-veg {
+    background: #ffebee;
+    color: #FF5722;
+}
+
+/* Card Title */
+.popular-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Card Description */
+.popular-card-text {
+    font-size: 0.75rem;
+    color: #777;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Card Footer */
+.popular-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.popular-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #FF6B35;
+}
+
+.add-btn {
+    background: #FF6B35;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.add-btn:hover {
+    background: #e55a2b;
+    transform: scale(1.02);
 }
 
 /* View All Button */
-.view-all-btn {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.view-all-btn .btn {
-  background: transparent;
-  border: 2px solid #FF6B35;
-  color: #FF6B35;
-  padding: 12px 35px;
-  border-radius: 50px;
-  font-weight: 500;
-  transition: all 0.3s;
-}
-
-.view-all-btn .btn:hover {
-  background: #FF6B35;
-  color: white;
-  transform: translateY(-2px);
-}
-
-/* About Section */
-.about-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-}
-
-.about-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #333;
-  position: relative;
-  display: inline-block;
-}
-
-.about-title:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background: #FF6B35;
-}
-
-.about-text {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #666;
-  margin-top: 20px;
-}
-
-.about-image {
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.about-image img {
-  transition: transform 0.5s;
-  width: 100%;
-  height: auto;
-}
-
-.about-image:hover img {
-  transform: scale(1.05);
-}
-
-/* Info Section (Hours & Contact) */
-.info-section {
-  padding: 80px 0;
-  background: #2C3E50;
-  color: white;
-}
-
-.info-card {
-  text-align: center;
-  padding: 30px;
-}
-
-.info-icon {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.info-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  position: relative;
-  display: inline-block;
-}
-
-.info-card h3:after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 2px;
-  background: #FF6B35;
-}
-
-.info-card p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: rgba(255,255,255,0.8);
-}
-
-/* Responsive Design */
-@media (max-width: 991px) {
-  .restaurant-name {
-    font-size: 3.5rem;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .about-title {
+.view-all-container {
+    text-align: center;
     margin-top: 30px;
-  }
 }
 
+.view-all-btn {
+    background: transparent;
+    border: 2px solid #FF6B35;
+    color: #FF6B35;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.view-all-btn:hover {
+    background: #FF6B35;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .restaurant-name {
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-  }
-  
-  .section-title {
-    font-size: 1.8rem;
-  }
-  
-  .services-section,
-  .popular-section,
-  .about-section,
-  .info-section {
-    padding: 50px 0;
-  }
-  
-  .service-card {
-    margin-bottom: 20px;
-    padding: 30px 20px;
-  }
-  
-  .menu-card {
-    margin-bottom: 20px;
-  }
-  
-  .menu-card-img {
-    height: 200px;
-  }
-  
-  .about-title {
-    font-size: 1.5rem;
-  }
-  
-  .info-card {
-    margin-bottom: 20px;
-  }
+    .popular-section {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .card-img-wrapper {
+        height: 180px;
+    }
+    
+    .popular-card-title {
+        font-size: 0.9rem;
+    }
+    
+    .popular-card-text {
+        font-size: 0.7rem;
+    }
+    
+    .popular-price {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 576px) {
-  .restaurant-name {
-    font-size: 1.8rem;
-  }
-  
-  .restaurant-year {
-    font-size: 0.9rem;
-  }
-  
-  .reserve-btn {
-    padding: 8px 25px;
-    font-size: 0.9rem;
-  }
-  
-  .section-title {
-    font-size: 1.5rem;
-  }
-  
-  .menu-card-title {
-    font-size: 1.1rem;
-  }
-  
-  .price {
-    font-size: 1.2rem;
-  }
+    .card-img-wrapper {
+        height: 160px;
+    }
+    
+    .popular-price {
+        font-size: 0.9rem;
+    }
+    
+    .add-btn {
+        padding: 4px 10px;
+        font-size: 0.65rem;
+    }
 }

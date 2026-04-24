@@ -1,4 +1,4 @@
-const Food = require('../models/Food');
+const Food = require('../models/food');
 
 // Create new food item (protected)
 const createFood = async (req, res) => {

@@ -238,6 +238,17 @@ const foods = [
     "createdBy": "69e98a14163c404cc51c02a8"
   },
   {
+    "name": "Coffee",
+    "description": "Per cup - Fresh brewed coffee - Veg",
+    "price": 15,
+    "category": "Beverage",
+    "imageUrl": "https://i.pinimg.com/1200x/26/ab/87/26ab87e0869e7cab25354ceddfb23127.jpg",
+    "isAvailable": true,
+    "rating": 4.3,
+    "isVeg": true,
+    "createdBy": "69e98a14163c404cc51c02a8"
+  },
+  {
     "name": "Fulko ruti",
     "description": "Per piece - Soft fluffy chapati - Veg",
     "price": 4,
@@ -326,10 +337,32 @@ const foods = [
     "createdBy": "69e98a14163c404cc51c02a8"
   },
   {
+    "name": "Tea",
+    "description": "Per cup - Hot masala chai - Veg",
+    "price": 10,
+    "category": "Beverage",
+    "imageUrl": "https://i.pinimg.com/736x/35/8e/6e/358e6e35f65035a7d3f68d923b9626cc.jpg",
+    "isAvailable": true,
+    "rating": 4.4,
+    "isVeg": true,
+    "createdBy": "69e98a14163c404cc51c02a8"
+  },
+  {
     "name": "Green tea",
     "description": "Per cup - Healthy green tea - Veg",
     "price": 15,
     "category": "Breakfast",
+    "imageUrl": "https://i.pinimg.com/736x/f3/51/4a/f3514ae3469ad66b41a8f9e2cda9be4b.jpg",
+    "isAvailable": true,
+    "rating": 4.2,
+    "isVeg": true,
+    "createdBy": "69e98a14163c404cc51c02a8"
+  },
+  {
+    "name": "Green tea",
+    "description": "Per cup - Healthy green tea - Veg",
+    "price": 15,
+    "category": "Beverage",
     "imageUrl": "https://i.pinimg.com/736x/f3/51/4a/f3514ae3469ad66b41a8f9e2cda9be4b.jpg",
     "isAvailable": true,
     "rating": 4.2,

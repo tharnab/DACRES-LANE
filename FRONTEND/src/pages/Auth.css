@@ -1,0 +1,227 @@
+/* Auth Pages - Clean White/Light Orange Design */
+.auth-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FFF8F5 0%, #FFFFFF 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+/* Decorative Shapes */
+.auth-bg-shape {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: #FF6B35;
+    top: -150px;
+    left: -150px;
+}
+
+.shape-2 {
+    width: 500px;
+    height: 500px;
+    background: #FF8C42;
+    bottom: -200px;
+    right: -200px;
+}
+
+.auth-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Auth Card */
+.auth-card {
+    max-width: 480px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    padding: 48px 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+/* Header */
+.auth-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-logo {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.auth-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+}
+
+.auth-header p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Form Labels */
+.form-label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+/* Custom Input Group */
+.input-group-custom {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #FF6B35;
+    z-index: 1;
+}
+
+.input-group-custom .form-control {
+    padding-left: 45px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    background: white;
+}
+
+.input-group-custom .form-control:focus {
+    border-color: #FF6B35;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    outline: none;
+}
+
+.input-group-custom .form-control::placeholder {
+    color: #bbb;
+}
+
+/* Forgot Link */
+.forgot-link {
+    text-align: right;
+    margin-bottom: 24px;
+}
+
+.forgot-link a {
+    color: #FF6B35;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s;
+}
+
+.forgot-link a:hover {
+    color: #e55a2b;
+    text-decoration: underline;
+}
+
+/* Auth Button */
+.auth-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 24px;
+}
+
+.auth-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+/* Footer */
+.auth-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.auth-footer p {
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0;
+}
+
+.auth-footer a {
+    color: #FF6B35;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.auth-footer a:hover {
+    color: #e55a2b;
+    text-decoration: underline;
+}
+
+/* Alert */
+.auth-alert {
+    border-radius: 12px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    border: none;
+    background: #fff5f5;
+    color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-card {
+        margin: 20px;
+        padding: 32px 24px;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .auth-logo {
+        font-size: 2.5rem;
+    }
+    
+    .input-group-custom .form-control {
+        height: 45px;
+    }
+    
+    .auth-btn {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 24px 20px;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.3rem;
+    }
+}
