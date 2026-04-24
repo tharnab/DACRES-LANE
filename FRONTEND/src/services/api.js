@@ -1,7 +1,8 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const API = axios.create({ baseURL: 'http://localhost:5000/api' });
+// Change this to your Render backend URL
+const API = axios.create({ baseURL: 'https://dacres-lane.onrender.com/api' });
 
 API.interceptors.request.use((req) => {
     const token = localStorage.getItem('token');
