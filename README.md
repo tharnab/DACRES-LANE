@@ -1,5 +1,9 @@
 # 🍕 DACRES LANE - Complete Food Delivery Platform
 
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fdareslane.netlify.app)](https://dareslane.netlify.app)
+[![GitHub last commit](https://img.shields.io/github/last-commit/tharnab/DACRES-LANE)](https://github.com/tharnab/DACRES-LANE)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/tharnab/DACRES-LANE)](https://github.com/tharnab/DACRES-LANE)
+
 ## 📌 Project Overview
 
 **DACRES LANE** is a complete, production-ready food delivery web application built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It provides a seamless experience for users to browse food items, place orders, and track deliveries, while giving administrators full control over menu management and order processing.
