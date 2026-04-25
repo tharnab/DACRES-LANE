@@ -6,13 +6,13 @@
 
 ## 📋 Table of Contents
 
-- [Live Demo](#-live-demo)
-- [Screenshots](#-screenshots)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [API Endpoints](#-api-endpoints)
-- [Installation](#-installation-guide)
-
+- 🚀 [Live Demo](#-live-demo)
+- 📸 [Screenshots](#-screenshots)
+- ✨ [Features](#-features)
+- 🛠️ [Tech Stack](#️-tech-stack)
+- 🔗 [API Endpoints](#-api-endpoints)
+- 💻 [Installation](#-installation-guide)
+- 
 ## 📌 Project Overview
 
 **DACRES LANE** is a complete, production-ready food delivery web application built with the MERN stack (MongoDB, Express.js, React.js, Node.js). It provides a seamless experience for users to browse food items, place orders, and track deliveries, while giving administrators full control over menu management and order processing.
@@ -38,6 +38,21 @@ This project demonstrates a full-stack application with:
 | **GitHub Repository** | [https://github.com/tharnab/DACRES-LANE](https://github.com/tharnab/DACRES-LANE) |
 
 ---
+
+## 📸 Screenshots
+
+| Desktop View | Mobile View |
+|--------------|-------------|
+| ![Home Page](screenshots/home-page.png) | ![Mobile Home](screenshots/mobile-home.png) |
+
+| Menu Page | Cart Page |
+|-----------|-----------|
+| ![Menu Page](screenshots/menu-page.png) | ![Cart Page](screenshots/cart-page.png) |
+
+| Admin Dashboard | Order Tracking |
+|----------------|----------------|
+| ![Admin](screenshots/admin-dashboard.png) | ![Track Order](screenshots/track-order.png) |
+
 
 ## 🔑 Demo Credentials
 
