@@ -43,15 +43,15 @@ This project demonstrates a full-stack application with:
 
 | Desktop View | Mobile View |
 |--------------|-------------|
-| ![Home Page](screenshots/home-page.png) | ![Mobile Home](screenshots/mobile-home.png) |
+| ![Home Page](https://github.com/user-attachments/assets/19655f86-df5c-4539-b886-251ea4858be0) | ![Mobile Home](https://github.com/user-attachments/assets/4c01ee7a-77c7-4331-ba16-53310c40d1c8) |
 
 | Menu Page | Cart Page |
 |-----------|-----------|
-| ![Menu Page](screenshots/menu-page.png) | ![Cart Page](screenshots/cart-page.png) |
+| ![Menu Page](https://github.com/user-attachments/assets/4e34b66b-7287-4aac-9068-6debf518637f) | ![Cart Page](https://github.com/user-attachments/assets/3f660c05-f223-44dd-b467-d0418bafa17f) |
 
 | Admin Dashboard | Order Tracking |
 |----------------|----------------|
-| ![Admin](screenshots/admin-dashboard.png) | ![Track Order](screenshots/track-order.png) |
+| ![Admin Dashboard](https://github.com/user-attachments/assets/0c62777e-ab2d-4ea2-b644-2c25f80aa568) | ![Track Order](https://github.com/user-attachments/assets/ad76ca8d-a12c-4dc6-b9fc-b72a9068e326) |
 
 
 ## 🔑 Demo Credentials
