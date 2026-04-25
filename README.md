@@ -234,36 +234,45 @@ git clone https://github.com/YOUR_USERNAME/DACRES-LANE.git
 ```
 
 # Navigate to project folder
+
+```bash
+# Navigating to the project folder
 cd DACRES-LANE
 
+
 ### Step 3: Backend Setup
+
+```bash
 # Navigate to backend folder
 cd BACKEND
 
-# Install dependencies
+# to install dependencies
 npm install
+```
 
-# Create .env file
+# Create .env file in the BACKEND folder with these variables:
 echo "PORT=5000" > .env
 echo "uri=your_mongodb_connection_string" >> .env
 echo "JWT_SECRET=your_super_secret_key" >> .env
 
 # Start Backend Server
+
+```bash
 npm run dev
+```
 
 ### Step 4: Frontend Setup
 
+```bash
 # Open new terminal, navigate to frontend folder
 cd ../FRONTEND
 
 # Install dependencies
 npm install
 
-# Create .env file
-echo "VITE_API_URL=http://localhost:5000/api" > .env
-
 # Start frontend server
 npm run dev
+```
 
 ✅ Frontend runs on http://localhost:5173
 
