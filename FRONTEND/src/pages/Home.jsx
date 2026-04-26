@@ -138,7 +138,7 @@ const Home = () => {
                             <div className="service-card">
                                 <div className="service-icon">👨‍🍳</div>
                                 <h3>Founder</h3>
-                                <p>DACRES LANE<br />EST. 2024</p>
+                                <p>DACRES LANE<br />EST. 2026</p>
                             </div>
                         </Col>
                     </Row>
